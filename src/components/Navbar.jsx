@@ -1,4 +1,4 @@
-const Navbar = ({setCategory}) => {
+const Navbar = ({setCategory, setModal}) => {
   const chooseLink = (e) => {
     e.preventDefault(),
     setCategory(e.target.id)
@@ -18,9 +18,9 @@ const Navbar = ({setCategory}) => {
         <li id="home-decoration" onClick={chooseLink}>Home decoration</li>
       </ul>
       <ul className="mini-navigation">
-        <li>Contact</li>
-        <li>Newsletter</li>
-        <li>Subscribe</li>
+        <li><a href="#contact">Contact</a></li>
+        <li onClick={() => setModal(true)}>Newsletter</li>
+        <li><a href="#subscription">Subscribe</a></li>
       </ul>
     </div>
   )

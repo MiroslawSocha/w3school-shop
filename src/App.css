@@ -9,6 +9,7 @@
 }
 
 .app{
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -79,6 +80,13 @@ li:hover{
   position: absolute;
   bottom: 100px;
   left: 0;
+  width: 100%;
+}
+
+.mini-navigation li a{
+  display: block;
+  text-decoration: none;
+  color: #000;
   width: 100%;
 }
 
@@ -200,10 +208,184 @@ li:hover{
 }
 
 .subscription h1{
-  margin: 10px 0;
+  margin: 10px 0 15px;
   font-size: 36px;
-  font-weight: 400;
+  width: 100%;
 }
+
+.subscription p{
+  margin-bottom: 15px;
+  font-size: 15px;
+  width: 100%;
+}
+
+.subscription p input{
+  padding: 8px;
+  font-size: 15px;
+  width: 98%;
+  border: 1px solid #ccc;
+}
+
+.subscription button, .content button{
+  background-color: #f44336;
+  color: #fff;
+  margin-bottom: 16px;
+  padding: 8px 16px;
+  border: none;
+}
+
+button, input{
+  font: inherit;
+}
+
+button:hover, button a:hover, .content svg:hover, .content button:hover{
+  background-color: #ccc !important;
+  color: #000 !important;
+}
+
+.contact{
+  color: #000;
+  background-color: #f1f1f1;
+  display: flex;
+  text-align: center;
+  justify-content: space-between;
+  margin-left: 250px;
+  padding: 64px 8px;
+}
+
+.contact .column{
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  padding: 0 8px;
+}
+
+.contact .column3 p, .column3 h4{
+  text-align: left;
+}
+
+.contact .column h4{
+  margin: 10px 0 12px;
+  font-size: 20px;
+}
+
+.contact .column p,
+.contact .column input,
+.contact .column button{
+  margin-bottom: 12px;
+  font-size: 12px;
+  padding: 8px;
+}
+
+.contact .column p{
+  padding: 0;
+}
+
+.contact .column input{
+  border: 1px solid #ccc;
+}
+
+.contact .column button{
+  background-color: #000;
+  color: #ccc;
+  border: none;
+  margin: 0;
+}
+
+.contact .column a{
+  margin-bottom: 12px;
+  color: #000;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.icon{
+  text-align: left;
+  font-size: 20px;
+}
+
+.icon svg{
+  margin: 2px; 
+
+}
+
+.icon *:hover{
+  color: #ccc;
+}
+
+.footer{
+  background-color: #000;
+  margin-left: 250px;
+  padding: 24px 0;
+  color: #ccc;
+  text-align: center;
+}
+
+.footer a{
+  color: #fff;
+}
+
+.footer a:hover{
+  opacity: .6;
+}
+
+b{
+  font-weight: bold !important;
+}
+
+.modal{
+  /* display: none; */
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  padding-top: 100px;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .4);
+}
+
+.modal .newsletter{
+  margin: auto;
+  background-color: #fff;
+  position: relative;
+  padding: 32px;
+  outline: 0;
+  width: 900px;
+  animation: zoom .6s;
+}
+
+.newsletter .content{
+  text-align: center;
+  padding: 0 16px;
+  color: #000 !important;
+  background-color: #fff !important;
+}
+
+.content svg{
+  font-size: 26px;
+  float: right !important;
+  background-color: transparent;
+  padding: 8px 16px;
+}
+
+.content h2{
+  text-transform: uppercase;
+  margin-top: 10px;
+  letter-spacing: 4px;
+  font-size: 30px;
+}
+
+.content p{
+  margin: 15px 0;
+}
+
+.content p input{
+  padding: 8px;
+  border: 1px solid #ccc;
+  width: 100%;
+}
+
 
 
 
@@ -212,9 +394,18 @@ li:hover{
   .navbar{
     left: 0;
   }
-  @media only screen and (max-width: 1100px) {
+  /* @media only screen and (max-width: 1100px) {
     main{
       margin-left: 270px !important;
     }
+  } */
+}
+
+@keyframes zoom{
+  0%{
+    transform: scale(0);
+  }
+  100%{
+    transform: scale(1);
   }
 }
