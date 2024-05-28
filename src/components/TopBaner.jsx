@@ -1,6 +1,6 @@
 import { FaShoppingCart, FaSearch } from "react-icons/fa";
 
-const TopBaner = ({category}) => {
+const TopBaner = ({category, totalDuplicates, setCartOpen}) => {
   const categoryName = (category) =>{
     if (category === "home-decoration") {
       return "home decoration"
@@ -13,10 +13,12 @@ const TopBaner = ({category}) => {
       <div className="top-baner">
         <div className="header">
           <p className="title">{categoryName(category)}</p>
-          <p className="icons">
-            <FaShoppingCart/>
+          <div className="icons">
+            <FaShoppingCart onClick={() => setCartOpen(true)}/>
             <FaSearch/>
-          </p>
+            {totalDuplicates != 0?<p className="count">{totalDuplicates}</p>:null}
+            
+          </div>
         </div>
         <div className="baner-image">
           <img src="https://www.w3schools.com/w3images/jeans.jpg" alt="baner" />

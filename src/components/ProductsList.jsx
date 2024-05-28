@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
+import { FaShoppingCart } from "react-icons/fa";
+import { useEffect, useState } from "react";
 
-const ProductsList = ({ products, setId }) => {
-
+const ProductsList = ({ products, setId, cart, setCart, setTotalDuplicates, totalDuplicates }) => {
   return (
     <div className="product-list">
       <div id="list" className="count-product">
@@ -17,9 +18,16 @@ const ProductsList = ({ products, setId }) => {
                 <b>${product.price}</b>
               </p>
             </Link>
+            <div className="buy-now">
+              <button
+                onClick={() => (setCart([...cart, product.id]), setTotalDuplicates(totalDuplicates + 1))}
+              >
+                Buy now <FaShoppingCart />
+              </button>
+            </div>
+
           </div>
         ))}
-
       </div>
     </div>
   );

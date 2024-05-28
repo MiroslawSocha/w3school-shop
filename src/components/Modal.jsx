@@ -3,7 +3,7 @@ import { ImCross } from "react-icons/im";
 
 const Modal = ({setModal}) => {
   return (
-    <div className='modal'>
+    <div className='modal-new'>
       <div className="newsletter">
         <div className="content">
             <ImCross onClick={() => setModal(false)}/>

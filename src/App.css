@@ -16,7 +16,7 @@
 }
 
 .navbar{
-  /* display: block; */
+  display: block;
   position: fixed;
   top: 0;
   /* left: 0; */
@@ -80,7 +80,7 @@ li:hover{
   position: absolute;
   bottom: 100px;
   left: 0;
-  width: 100%;
+  width: 94%;
 }
 
 .mini-navigation li a{
@@ -104,8 +104,28 @@ li:hover{
   margin: 24px 0;
 }
 
-.header p *{
+.header .icons{
+  position: relative;
+}
+
+.header .icons *{
   margin: 0 5px;
+  cursor: pointer;
+}
+
+.header .icons .count{
+  position: absolute;
+  top: -5px;
+  left: -7px;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ccc;
+  font-size: 12px;
+  border-radius: 50%;
+  font-weight: bold;
 }
 
 .baner-image{
@@ -140,11 +160,13 @@ li:hover{
 
 .baner-image button{
   background-color: #000;
-  padding: 12px 24px;
   border: none;
+  height: 50px;
 }
 
 .baner-image button a{
+  padding: 12px 24px !important;
+  width: 100%;
   text-transform: uppercase;
   color: #fff;
   font-size: 18px;
@@ -167,6 +189,7 @@ li:hover{
 }
 
 .product-list .single-product{
+  position: relative;
   width: 25%;
   height: 350px;
   margin: 0 15px;
@@ -177,6 +200,8 @@ li:hover{
   flex-direction: column;
   width: 100%;
   height: 100%;
+  color: #000;
+  text-decoration: none;
 }
 
 .product-list .single-product a img{
@@ -186,20 +211,34 @@ li:hover{
   float: left;
 }
 
-.product-list .single-product a{
-  color: #000;
-  text-decoration: none;
-}
-
 .product-list .single-product a p{
   height: 20%;
   margin: 20px 0;
 }
 
+.product-list .single-product .buy-now{
+  display: none;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.product-list .single-product .buy-now button, .controls button{
+  color: #fff;
+  background-color: #000;
+  padding: 8px 16px;
+  border: none;
+}
+
+.single-product:hover .buy-now{
+  display: block;
+}
+
 .subscription{
   background-color: #000;
   color: #fff;
-  margin-left: 250px;
+  margin-left: 265px;
   display: flex;
   flex-direction: column;
   align-items: start;
@@ -238,9 +277,10 @@ button, input{
   font: inherit;
 }
 
-button:hover, button a:hover, .content svg:hover, .content button:hover{
+button:hover, button a:hover, .content svg:hover, .content button:hover, .buy-now button:hover, .controls button:hover{
   background-color: #ccc !important;
   color: #000 !important;
+  cursor: pointer;
 }
 
 .contact{
@@ -249,7 +289,7 @@ button:hover, button a:hover, .content svg:hover, .content button:hover{
   display: flex;
   text-align: center;
   justify-content: space-between;
-  margin-left: 250px;
+  margin-left: 265px;
   padding: 64px 8px;
 }
 
@@ -297,6 +337,7 @@ button:hover, button a:hover, .content svg:hover, .content button:hover{
   color: #000;
   font-size: 12px;
   cursor: pointer;
+  text-decoration: underline;
 }
 
 .icon{
@@ -315,7 +356,7 @@ button:hover, button a:hover, .content svg:hover, .content button:hover{
 
 .footer{
   background-color: #000;
-  margin-left: 250px;
+  margin-left: 265px;
   padding: 24px 0;
   color: #ccc;
   text-align: center;
@@ -323,6 +364,7 @@ button:hover, button a:hover, .content svg:hover, .content button:hover{
 
 .footer a{
   color: #fff;
+  text-decoration: underline;
 }
 
 .footer a:hover{
@@ -333,8 +375,7 @@ b{
   font-weight: bold !important;
 }
 
-.modal{
-  /* display: none; */
+.modal-new, .cart{
   position: fixed;
   top: 0;
   left: 0;
@@ -345,7 +386,7 @@ b{
   background-color: rgba(0, 0, 0, .4);
 }
 
-.modal .newsletter{
+.modal-new .newsletter, .cart .cart-body{
   margin: auto;
   background-color: #fff;
   position: relative;
@@ -355,7 +396,7 @@ b{
   animation: zoom .6s;
 }
 
-.newsletter .content{
+.newsletter .content, .cart-body .content{
   text-align: center;
   padding: 0 16px;
   color: #000 !important;
@@ -374,6 +415,7 @@ b{
   margin-top: 10px;
   letter-spacing: 4px;
   font-size: 30px;
+  text-align: center;
 }
 
 .content p{
@@ -384,6 +426,88 @@ b{
   padding: 8px;
   border: 1px solid #ccc;
   width: 100%;
+}
+
+.product-details{
+  padding: 16px 16px;
+  display: flex;
+  position: relative;
+  margin-bottom: 64px;
+}
+
+.product-details img{
+  width: 500px;
+  margin-right: 15px;
+  max-height: 400px;
+}
+
+.product-details .controls{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: -25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.product-details .controls button{
+  width: 100px;
+  padding: 8px 16px;
+  margin: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.alert {
+  font-size: 50px;
+  background-color: #000;
+  color: #fff;
+}
+
+.cart-items{
+  max-height: 500px;
+  overflow-y: scroll;
+  margin-right: 10px;
+}
+.cart-items {
+  max-height: 500px;
+  overflow-y: scroll;
+}
+
+.cart-items img{
+  width: 150px;
+  overflow-y: scroll;
+}
+
+.cart-items .cart-single-item{
+  width: 99%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 24px 8px;
+}
+
+.cart-items .cart-single-item *{
+  width: 25%;
+}
+
+.cart-single-item .change-count h4{
+  width: 100%;
+}
+
+.cart-single-item .change-count .buttons{
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.cart-single-item .change-count .buttons button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 

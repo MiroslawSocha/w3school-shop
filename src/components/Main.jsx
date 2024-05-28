@@ -4,8 +4,7 @@ import { useEffect, useState } from "react";
 import ProductsList from "./ProductsList";
 import ProductDetails from "./ProductDetails";
 
-const Main = ({ categoryParam }) => {
-  const [products, setProducts] = useState([]);
+const Main = ({ categoryParam, cart, setCart, setProducts, products, setTotalDuplicates, totalDuplicates }) => {
   const [id, setId] = useState(0);
 
   useEffect(() => {
@@ -25,8 +24,8 @@ const Main = ({ categoryParam }) => {
     <div className="main">
       <Router>
         <Routes>
-          <Route path="/" element={<ProductsList products={filterProducts} setId={setId}/>} />
-          <Route path="/:id" element={<ProductDetails products={products} id={id}/>} />
+          <Route path="/" element={<ProductsList products={filterProducts} setId={setId} cart={cart} setCart={setCart} setTotalDuplicates={setTotalDuplicates} totalDuplicates={totalDuplicates}/>} />
+          <Route path="/:id" element={<ProductDetails products={products} id={id} cart={cart} setCart={setCart} setTotalDuplicates={setTotalDuplicates} totalDuplicates={totalDuplicates}/>} />
         </Routes>
       </Router>
     </div>
