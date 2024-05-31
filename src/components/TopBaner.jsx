@@ -16,7 +16,7 @@ const TopBaner = ({category, totalDuplicates, setCartOpen}) => {
           <div className="icons">
             <FaShoppingCart onClick={() => setCartOpen(true)}/>
             <FaSearch/>
-            {totalDuplicates != 0?<p className="count">{totalDuplicates}</p>:null}
+            {totalDuplicates != 0?<p onClick={() => setCartOpen(true)} className="count">{totalDuplicates}</p>:null}
             
           </div>
         </div>

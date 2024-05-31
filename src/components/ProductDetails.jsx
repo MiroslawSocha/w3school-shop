@@ -1,10 +1,20 @@
 import { useNavigate } from "react-router";
 import { IoIosReturnLeft } from "react-icons/io";
 import { FaShoppingCart } from "react-icons/fa";
+import { useState } from "react";
 
-const ProductDetails = ({ products, id, cart, setCart, setTotalDuplicates, totalDuplicates  }) => {
+const ProductDetails = ({ products, Id, cart, setCart, setTotalDuplicates, totalDuplicates  }) => {
   const navigate = useNavigate();
-  const index = id - 1;
+  const [quantityValue, setQuantityValue] = useState(1);
+  const index = Id - 1;
+
+  const setTotal = () => {
+    for (let i = 0; i < quantityValue; i++) {
+      cart.push(products[index].id) 
+    }
+    setTotalDuplicates(totalDuplicates + parseInt(quantityValue))
+  }
+  
   return (
     <div className="product-details">
       <img src={products[index].thumbnail} alt={products[index].title} />
@@ -43,10 +53,13 @@ const ProductDetails = ({ products, id, cart, setCart, setTotalDuplicates, total
             <IoIosReturnLeft />
             Return
           </button>
-          <button onClick={() => (setCart([...cart, products[index].id]), setTotalDuplicates(totalDuplicates + 1))}>
-            Buy now
-            <FaShoppingCart/>
-          </button>
+          <div className="buy">
+            <input type="number" defaultValue={1} onChange={(e) => setQuantityValue(e.target.value)}/>
+            <button onClick={setTotal}>
+              Buy now
+              <FaShoppingCart/>
+            </button>
+          </div>
         </div>
 
     </div>

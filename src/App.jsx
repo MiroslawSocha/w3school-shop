@@ -6,6 +6,7 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import Modal from "./components/Modal";
 import Cart from "./components/Cart";
+import Summary from "./components/Summary";
 import "./App.css";
 import { useState } from "react";
 
@@ -16,6 +17,7 @@ function App() {
   const [cartOpen, setCartOpen] = useState(false)
   const [products, setProducts] = useState([])
   const [totalDuplicates, setTotalDuplicates] = useState(0);
+  const [summaryOpen, setSummaryOpen] = useState(false);
   
   
   return (
@@ -29,7 +31,8 @@ function App() {
         <Footer />
       </main>
       {modal == true ? <Modal setModal={setModal}/> : null}
-      {cartOpen == true ? <Cart cart={cart} setCart={setCart} setCartOpen={setCartOpen} products={products} totalDuplicates={totalDuplicates} setTotalDuplicates={setTotalDuplicates}/> : null}
+      {cartOpen == true ? <Cart cart={cart} setCartOpen={setCartOpen} products={products} setTotalDuplicates={setTotalDuplicates} setSummaryOpen={setSummaryOpen}/> : null}
+      {summaryOpen == true ? <Summary setSummaryOpen={setSummaryOpen} products={products} cart={cart} setTotalDuplicates={setTotalDuplicates} setCart={setCart}/> : null}
       
     </div>
   );

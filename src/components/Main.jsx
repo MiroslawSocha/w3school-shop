@@ -25,7 +25,7 @@ const Main = ({ categoryParam, cart, setCart, setProducts, products, setTotalDup
       <Router>
         <Routes>
           <Route path="/" element={<ProductsList products={filterProducts} setId={setId} cart={cart} setCart={setCart} setTotalDuplicates={setTotalDuplicates} totalDuplicates={totalDuplicates}/>} />
-          <Route path="/:id" element={<ProductDetails products={products} id={id} cart={cart} setCart={setCart} setTotalDuplicates={setTotalDuplicates} totalDuplicates={totalDuplicates}/>} />
+          <Route path="/:id" element={<ProductDetails products={products} Id={id} cart={cart} setCart={setCart} setTotalDuplicates={setTotalDuplicates} totalDuplicates={totalDuplicates}/>} />
         </Routes>
       </Router>
     </div>
