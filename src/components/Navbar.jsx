@@ -20,7 +20,7 @@ const Navbar = ({setCategory, setModal}) => {
       <ul className="mini-navigation">
         <li><a href="#contact">Contact</a></li>
         <li onClick={() => setModal(true)}>Newsletter</li>
-        <li><a href="#subscription">Subscribe</a></li>
+        <li><a href="#subscription">Subscribe+</a></li>
       </ul>
     </div>
   )
